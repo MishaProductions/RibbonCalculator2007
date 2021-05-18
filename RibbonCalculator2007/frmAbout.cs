@@ -31,19 +31,5 @@ namespace MicrosoftCalculator2007
         {
             this.Close();
         }
-
-        private void ribbonPanel2_Click(object sender, EventArgs e)
-        {
-            //Nothing to see here
-            a++;
-            if (a == (1 + 1 + 1))
-            {
-                Form b = new Form();
-                b.BackgroundImage = Properties.Resources._03WQjoBe;
-                b.BackgroundImageLayout = ImageLayout.Stretch;
-                b.Show();
-            }
-        }
-        int a = 0;
     }
 }

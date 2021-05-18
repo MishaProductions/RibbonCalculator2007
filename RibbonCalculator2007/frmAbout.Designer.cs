@@ -36,8 +36,6 @@ namespace MicrosoftCalculator2007
             this.btnOK = new System.Windows.Forms.RibbonButton();
             this.btnOK2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -66,7 +64,6 @@ namespace MicrosoftCalculator2007
             // 
             this.ribbonTab1.Name = "ribbonTab1";
             this.ribbonTab1.Panels.Add(this.ribbonPanel1);
-            this.ribbonTab1.Panels.Add(this.ribbonPanel2);
             this.ribbonTab1.Text = "About";
             // 
             // ribbonPanel1
@@ -104,19 +101,6 @@ namespace MicrosoftCalculator2007
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "Ribbon Calculator 2007\nCreated by Misha, just for fun.\nVersion: v1.0";
             // 
-            // ribbonPanel2
-            // 
-            this.ribbonPanel2.Items.Add(this.ribbonLabel1);
-            this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Text = "AboutPage";
-            this.ribbonPanel2.Click += new System.EventHandler(this.ribbonPanel2_Click);
-            // 
-            // ribbonLabel1
-            // 
-            this.ribbonLabel1.Name = "ribbonLabel1";
-            this.ribbonLabel1.Text = "About page";
-            this.ribbonLabel1.Click += new System.EventHandler(this.ribbonPanel2_Click);
-            // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -145,7 +129,5 @@ namespace MicrosoftCalculator2007
         private System.Windows.Forms.RibbonButton btnOK;
         private System.Windows.Forms.Button btnOK2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RibbonPanel ribbonPanel2;
-        private System.Windows.Forms.RibbonLabel ribbonLabel1;
     }
 }

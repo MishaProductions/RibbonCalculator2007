@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MicrosoftCalculator2007
+namespace RibbonCalculator2007
 {
     public partial class frmMain : RibbonForm
     {
@@ -22,7 +15,14 @@ namespace MicrosoftCalculator2007
         {
             InitializeComponent();
             //set theme
-            ribbon.ThemeColor = (RibbonTheme)Properties.Settings.Default.Theme;
+            try
+            {
+                ribbon.ThemeColor = (RibbonTheme)Properties.Settings.Default.Theme;
+            }
+            catch
+            {
+
+            }
         }
         #region Number buttons
         private void ribbonButton1_Click(object sender, EventArgs e)

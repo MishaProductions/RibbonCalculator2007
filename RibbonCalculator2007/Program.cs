@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MicrosoftCalculator2007
+namespace RibbonCalculator2007
 {
     static class Program
     {

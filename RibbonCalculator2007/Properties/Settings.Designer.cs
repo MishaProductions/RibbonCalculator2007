@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MicrosoftCalculator2007.Properties {
+namespace RibbonCalculator2007.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

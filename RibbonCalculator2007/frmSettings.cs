@@ -1,21 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MicrosoftCalculator2007
+namespace RibbonCalculator2007
 {
     public partial class frmSettings : RibbonForm
     {
         public frmSettings()
         {
             InitializeComponent();
-            ribbon1.ThemeColor = (RibbonTheme)Properties.Settings.Default.Theme;
+            try
+            {
+                ribbon1.ThemeColor = (RibbonTheme)Properties.Settings.Default.Theme;
+            }
+            catch
+            {
+                Properties.Settings.Default.Reset();
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Reload();
+            }
             int i = 0;
             foreach (var value in Enum.GetValues(typeof(RibbonTheme)))
             {

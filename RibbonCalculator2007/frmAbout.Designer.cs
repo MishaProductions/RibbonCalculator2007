@@ -1,5 +1,5 @@
 ﻿
-namespace MicrosoftCalculator2007
+namespace RibbonCalculator2007
 {
     partial class frmAbout
     {

@@ -59,15 +59,5 @@ namespace MicrosoftCalculator2007.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _03WQjoBe {
-            get {
-                object obj = ResourceManager.GetObject("03WQjoBe", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

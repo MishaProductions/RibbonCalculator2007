@@ -29,6 +29,7 @@ namespace MicrosoftCalculator2007
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSettings));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,11 +53,11 @@ namespace MicrosoftCalculator2007
             this.ribbon1.OrbDropDown.TabIndex = 0;
             this.ribbon1.OrbVisible = false;
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(800, 54);
+            this.ribbon1.Size = new System.Drawing.Size(456, 54);
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Text = "ribbon1";
-            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
+            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Green;
             // 
             // ribbonTab1
             // 
@@ -65,8 +66,9 @@ namespace MicrosoftCalculator2007
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(709, 406);
+            this.button1.Location = new System.Drawing.Point(365, 406);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(79, 32);
             this.button1.TabIndex = 1;
@@ -97,15 +99,18 @@ namespace MicrosoftCalculator2007
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(456, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ribbon1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MinimizeBox = false;
             this.Name = "frmSettings";
-            this.Text = "frmSettings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Settings";
             this.ResumeLayout(false);
             this.PerformLayout();
 

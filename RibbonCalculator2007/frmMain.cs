@@ -12,14 +12,16 @@ namespace MicrosoftCalculator2007
 {
     public partial class frmMain : RibbonForm
     {
-        string operand1;
-        string operand2;
+        string Operand1;
+        string Operand2;
 
         string Input;
-        string Opertion = "";
+        string CurrentOperation = "";
+        bool InitalZero = true;
         public frmMain()
         {
             InitializeComponent();
+            //set theme
             ribbon.ThemeColor = (RibbonTheme)Properties.Settings.Default.Theme;
         }
         #region Number buttons
@@ -100,43 +102,43 @@ namespace MicrosoftCalculator2007
                 MessageBox.Show("Please input a second number");
                 return;
             }
-            if (string.IsNullOrEmpty(Opertion))
+            if (string.IsNullOrEmpty(CurrentOperation))
             {
                 MessageBox.Show("Please enter an operation");
                 return;
             }
-            operand2 = Input;
+            Operand2 = Input;
             Input = "";
 
             //Check if user has not inputed any numbers
-            if (string.IsNullOrEmpty(operand1))
+            if (string.IsNullOrEmpty(Operand1))
             {
                 MessageBox.Show("Please input a number first!");
                 return;
             }
 
-            var num1 = double.Parse(operand1);
-            var num2 = double.Parse(operand2);
+            var num1 = double.Parse(Operand1);
+            var num2 = double.Parse(Operand2);
 
-            if (Opertion == "+")
+            if (CurrentOperation == "+")
             {
                 var result = num1 + num2;
                 Input = "";
-                operand1 = result.ToString(); //This is so adding the result with another number would work
-                operand2 = "";
-                Opertion = "";
+                Operand1 = result.ToString(); //This is so adding the result with another number would work
+                Operand2 = "";
+                CurrentOperation = "";
                 textBox1.Text = result.ToString();
             }
-            else if (Opertion == "-")
+            else if (CurrentOperation == "-")
             {
                 var result = num1 - num2;
                 Input = "";
-                operand1 = result.ToString(); //This is so adding the result with another number would work
-                operand2 = "";
-                Opertion = "";
+                Operand1 = result.ToString(); //This is so adding the result with another number would work
+                Operand2 = "";
+                CurrentOperation = "";
                 textBox1.Text = result.ToString();
             }
-            else if (Opertion == "➗")
+            else if (CurrentOperation == "➗")
             {
                 if (num2 == 0)
                 {
@@ -146,18 +148,18 @@ namespace MicrosoftCalculator2007
                 }    
                 var result = num1 / num2;
                 Input = "";
-                operand1 = result.ToString(); //This is so adding the result with another number would work
-                operand2 = "";
-                Opertion = "";
+                Operand1 = result.ToString(); //This is so adding the result with another number would work
+                Operand2 = "";
+                CurrentOperation = "";
                 textBox1.Text = result.ToString();
             }
-            else if (Opertion == "×")
+            else if (CurrentOperation == "×")
             {
                 var result = num1 * num2;
                 Input = "";
-                operand1 = result.ToString(); //This is so adding the result with another number would work
-                operand2 = "";
-                Opertion = "";
+                Operand1 = result.ToString(); //This is so adding the result with another number would work
+                Operand2 = "";
+                CurrentOperation = "";
                 textBox1.Text = result.ToString();
             }
             else
@@ -175,23 +177,23 @@ namespace MicrosoftCalculator2007
         #region Helper functions
         private void SetOperation(string Operation)
         {
-            if (!string.IsNullOrEmpty(Opertion))
+            if (!string.IsNullOrEmpty(CurrentOperation))
             {
                 HandleError("More than 1 operations not supported!");
                 return;
             }
 
-            Opertion = Operation;
-            if (string.IsNullOrEmpty(operand1))
+            CurrentOperation = Operation;
+            if (string.IsNullOrEmpty(Operand1))
             {
-                operand1 = Input;
+                Operand1 = Input;
                 Input = "";
                 textBox1.Text += Operation;
                 return;
             }
-            else if (string.IsNullOrEmpty(operand2))
+            else if (string.IsNullOrEmpty(Operand2))
             {
-                operand2 = Input;
+                Operand2 = Input;
                 Input = "";
                 textBox1.Text += Operation;
                 return;
@@ -200,6 +202,11 @@ namespace MicrosoftCalculator2007
         }
         private void AddNumberToTextBox(string numb)
         {
+            if (InitalZero)
+            {
+                textBox1.Text = "";
+                InitalZero = false;
+            }
             Input += numb;
             textBox1.Text += numb;
         }
@@ -210,13 +217,14 @@ namespace MicrosoftCalculator2007
         private void Clear()
         {
             Input = "";
-            operand1 = ""; //This is so adding the result with another number would work
-            operand2 = "";
-            Opertion = "";
-            textBox1.Text = "";
+            Operand1 = ""; //This is so adding the result with another number would work
+            Operand2 = "";
+            CurrentOperation = "";
+            textBox1.Text = "0";
+            InitalZero = true;
         }
         #endregion
-
+        #region Orb menu buttons
         private void ribbonOrbAbout_Click(object sender, EventArgs e)
         {
             new frmAbout().ShowDialog();
@@ -231,5 +239,6 @@ namespace MicrosoftCalculator2007
         {
             new frmSettings().ShowDialog();
         }
+        #endregion
     }
 }

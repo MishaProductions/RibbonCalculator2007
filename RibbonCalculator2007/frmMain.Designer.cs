@@ -33,6 +33,7 @@ namespace MicrosoftCalculator2007
             this.ribbon = new System.Windows.Forms.Ribbon();
             this.ribbonOrbAbout = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbExit = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbSettings = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanelNumbers = new System.Windows.Forms.RibbonPanel();
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
@@ -54,7 +55,6 @@ namespace MicrosoftCalculator2007
             this.btnFindout = new System.Windows.Forms.RibbonButton();
             this.btnClear = new System.Windows.Forms.RibbonButton();
             this.textBox1 = new System.Windows.Forms.RichTextBox();
-            this.ribbonOrbSettings = new System.Windows.Forms.RibbonOrbMenuItem();
             this.SuspendLayout();
             // 
             // ribbon
@@ -74,13 +74,13 @@ namespace MicrosoftCalculator2007
             this.ribbon.OrbDropDown.Name = "";
             this.ribbon.OrbDropDown.Size = new System.Drawing.Size(527, 204);
             this.ribbon.OrbDropDown.TabIndex = 0;
-            this.ribbon.OrbText = "ORb text";
+            this.ribbon.OrbText = "Orb text";
             this.ribbon.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
             this.ribbon.Size = new System.Drawing.Size(719, 152);
             this.ribbon.TabIndex = 0;
             this.ribbon.Tabs.Add(this.ribbonTab1);
             this.ribbon.Text = "ribbon1";
-            this.ribbon.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
+            this.ribbon.ThemeColor = System.Windows.Forms.RibbonTheme.Green;
             // 
             // ribbonOrbAbout
             // 
@@ -101,6 +101,16 @@ namespace MicrosoftCalculator2007
             this.ribbonOrbExit.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbExit.SmallImage")));
             this.ribbonOrbExit.Text = "Exit";
             this.ribbonOrbExit.Click += new System.EventHandler(this.ribbonOrbExit_Click);
+            // 
+            // ribbonOrbSettings
+            // 
+            this.ribbonOrbSettings.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbSettings.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbSettings.Image")));
+            this.ribbonOrbSettings.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbSettings.LargeImage")));
+            this.ribbonOrbSettings.Name = "ribbonOrbSettings";
+            this.ribbonOrbSettings.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbSettings.SmallImage")));
+            this.ribbonOrbSettings.Text = "Settings";
+            this.ribbonOrbSettings.Click += new System.EventHandler(this.ribbonOrbSettings_Click);
             // 
             // ribbonTab1
             // 
@@ -296,17 +306,7 @@ namespace MicrosoftCalculator2007
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(719, 283);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "";
-            // 
-            // ribbonOrbSettings
-            // 
-            this.ribbonOrbSettings.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.ribbonOrbSettings.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbSettings.Image")));
-            this.ribbonOrbSettings.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbSettings.LargeImage")));
-            this.ribbonOrbSettings.Name = "ribbonOrbSettings";
-            this.ribbonOrbSettings.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbSettings.SmallImage")));
-            this.ribbonOrbSettings.Text = "Settings";
-            this.ribbonOrbSettings.Click += new System.EventHandler(this.ribbonOrbSettings_Click);
+            this.textBox1.Text = "0";
             // 
             // frmMain
             // 
@@ -315,9 +315,9 @@ namespace MicrosoftCalculator2007
             this.ClientSize = new System.Drawing.Size(719, 435);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ribbon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "frmMain";
-            this.ShowIcon = false;
             this.Text = "Ribbon Calculator 2007";
             this.ResumeLayout(false);
 

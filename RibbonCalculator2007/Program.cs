@@ -14,7 +14,6 @@ namespace MicrosoftCalculator2007
         [STAThread]
         static void Main()
         {
-            //Application.VisualStyleState = System.Windows.Forms.VisualStyles.VisualStyleState.NoneEnabled;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());

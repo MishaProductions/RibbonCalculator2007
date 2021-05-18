@@ -25,7 +25,7 @@ namespace MicrosoftCalculator2007.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
         public int Theme {
             get {
                 return ((int)(this["Theme"]));

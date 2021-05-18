@@ -29,11 +29,8 @@ namespace MicrosoftCalculator2007
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.btnOK = new System.Windows.Forms.RibbonButton();
             this.btnOK2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
@@ -54,39 +51,23 @@ namespace MicrosoftCalculator2007
             this.ribbon1.OrbDropDown.TabIndex = 0;
             this.ribbon1.OrbVisible = false;
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(722, 148);
+            this.ribbon1.Size = new System.Drawing.Size(388, 71);
             this.ribbon1.TabIndex = 2;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Text = "ribbon1";
-            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
+            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Green;
             // 
             // ribbonTab1
             // 
             this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Panels.Add(this.ribbonPanel1);
             this.ribbonTab1.Text = "About";
-            // 
-            // ribbonPanel1
-            // 
-            this.ribbonPanel1.Items.Add(this.btnOK);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Text = "Tools";
-            // 
-            // btnOK
-            // 
-            this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
-            this.btnOK.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOK.LargeImage")));
-            this.btnOK.Name = "btnOK";
-            this.btnOK.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOK.SmallImage")));
-            this.btnOK.Text = "Exit";
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnOK2
             // 
             this.btnOK2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK2.Location = new System.Drawing.Point(608, 356);
+            this.btnOK2.Location = new System.Drawing.Point(285, 395);
             this.btnOK2.Name = "btnOK2";
-            this.btnOK2.Size = new System.Drawing.Size(102, 42);
+            this.btnOK2.Size = new System.Drawing.Size(91, 38);
             this.btnOK2.TabIndex = 3;
             this.btnOK2.Text = "OK";
             this.btnOK2.UseVisualStyleBackColor = true;
@@ -94,22 +75,27 @@ namespace MicrosoftCalculator2007
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(13, 155);
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(11, 78);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(697, 195);
+            this.richTextBox1.Size = new System.Drawing.Size(367, 311);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "Ribbon Calculator 2007\nCreated by Misha, just for fun.\nVersion: v1.0";
             // 
             // frmAbout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 410);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(388, 445);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnOK2);
             this.Controls.Add(this.ribbon1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -126,7 +112,6 @@ namespace MicrosoftCalculator2007
         private System.Windows.Forms.Ribbon ribbon1;
         private System.Windows.Forms.RibbonTab ribbonTab1;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;
-        private System.Windows.Forms.RibbonButton btnOK;
         private System.Windows.Forms.Button btnOK2;
         private System.Windows.Forms.RichTextBox richTextBox1;
     }

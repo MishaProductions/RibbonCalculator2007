@@ -22,11 +22,6 @@ namespace MicrosoftCalculator2007
             ribbon1.ThemeColor = (RibbonTheme)Properties.Settings.Default.Theme;
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnOK2_Click(object sender, EventArgs e)
         {
             this.Close();

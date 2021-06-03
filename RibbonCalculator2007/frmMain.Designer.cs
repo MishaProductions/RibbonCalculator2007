@@ -29,6 +29,7 @@ namespace RibbonCalculator2007
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon = new System.Windows.Forms.Ribbon();
             this.ribbonOrbAbout = new System.Windows.Forms.RibbonOrbMenuItem();
@@ -36,16 +37,17 @@ namespace RibbonCalculator2007
             this.ribbonOrbSettings = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanelNumbers = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton6 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton9 = new System.Windows.Forms.RibbonButton();
-            this.btnZero = new System.Windows.Forms.RibbonButton();
+            this.ribbonButtonList2 = new System.Windows.Forms.RibbonButtonList();
+            this.btn1 = new System.Windows.Forms.RibbonButton();
+            this.btn2 = new System.Windows.Forms.RibbonButton();
+            this.btn3 = new System.Windows.Forms.RibbonButton();
+            this.btn4 = new System.Windows.Forms.RibbonButton();
+            this.btn5 = new System.Windows.Forms.RibbonButton();
+            this.btn6 = new System.Windows.Forms.RibbonButton();
+            this.btn7 = new System.Windows.Forms.RibbonButton();
+            this.btn8 = new System.Windows.Forms.RibbonButton();
+            this.btn9 = new System.Windows.Forms.RibbonButton();
+            this.btn0 = new System.Windows.Forms.RibbonButton();
             this.ribbonPanelMathOperations = new System.Windows.Forms.RibbonPanel();
             this.btnAdd = new System.Windows.Forms.RibbonButton();
             this.btnSubtract = new System.Windows.Forms.RibbonButton();
@@ -55,6 +57,7 @@ namespace RibbonCalculator2007
             this.btnFindout = new System.Windows.Forms.RibbonButton();
             this.btnClear = new System.Windows.Forms.RibbonButton();
             this.textBox1 = new System.Windows.Forms.RichTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // ribbon
@@ -66,7 +69,7 @@ namespace RibbonCalculator2007
             // 
             // 
             // 
-            this.ribbon.OrbDropDown.BorderRoundness = 8;
+            this.ribbon.OrbDropDown.BorderRoundness = 2;
             this.ribbon.OrbDropDown.Location = new System.Drawing.Point(0, 0);
             this.ribbon.OrbDropDown.MenuItems.Add(this.ribbonOrbAbout);
             this.ribbon.OrbDropDown.MenuItems.Add(this.ribbonOrbExit);
@@ -122,108 +125,120 @@ namespace RibbonCalculator2007
             // 
             // ribbonPanelNumbers
             // 
-            this.ribbonPanelNumbers.Items.Add(this.ribbonButton1);
-            this.ribbonPanelNumbers.Items.Add(this.ribbonButton2);
-            this.ribbonPanelNumbers.Items.Add(this.ribbonButton3);
-            this.ribbonPanelNumbers.Items.Add(this.ribbonButton4);
-            this.ribbonPanelNumbers.Items.Add(this.ribbonButton5);
-            this.ribbonPanelNumbers.Items.Add(this.ribbonButton6);
-            this.ribbonPanelNumbers.Items.Add(this.ribbonButton7);
-            this.ribbonPanelNumbers.Items.Add(this.ribbonButton8);
-            this.ribbonPanelNumbers.Items.Add(this.ribbonButton9);
-            this.ribbonPanelNumbers.Items.Add(this.btnZero);
+            this.ribbonPanelNumbers.Items.Add(this.ribbonButtonList2);
             this.ribbonPanelNumbers.Name = "ribbonPanelNumbers";
             this.ribbonPanelNumbers.Text = "Numbers";
             // 
-            // ribbonButton1
+            // ribbonButtonList2
             // 
-            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
-            this.ribbonButton1.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.LargeImage")));
-            this.ribbonButton1.Name = "ribbonButton1";
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Text = "1";
-            this.ribbonButton1.Click += new System.EventHandler(this.ribbonButton1_Click);
+            this.ribbonButtonList2.Buttons.Add(this.btn1);
+            this.ribbonButtonList2.Buttons.Add(this.btn2);
+            this.ribbonButtonList2.Buttons.Add(this.btn3);
+            this.ribbonButtonList2.Buttons.Add(this.btn4);
+            this.ribbonButtonList2.Buttons.Add(this.btn5);
+            this.ribbonButtonList2.Buttons.Add(this.btn6);
+            this.ribbonButtonList2.Buttons.Add(this.btn7);
+            this.ribbonButtonList2.Buttons.Add(this.btn8);
+            this.ribbonButtonList2.Buttons.Add(this.btn9);
+            this.ribbonButtonList2.Buttons.Add(this.btn0);
+            this.ribbonButtonList2.ButtonsSizeMode = System.Windows.Forms.RibbonElementSizeMode.Medium;
+            this.ribbonButtonList2.FlashEnabled = true;
+            this.ribbonButtonList2.FlashImage = global::RibbonCalculator2007.Properties.Resources.Calc;
+            this.ribbonButtonList2.FlowToBottom = false;
+            this.ribbonButtonList2.ItemsSizeInDropwDownMode = new System.Drawing.Size(7, 5);
+            this.ribbonButtonList2.Name = "ribbonButtonList2";
+            this.ribbonButtonList2.ShowFlashImage = true;
+            this.ribbonButtonList2.Text = "ribbonButtonList2";
             // 
-            // ribbonButton2
+            // btn1
             // 
-            this.ribbonButton2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.Image")));
-            this.ribbonButton2.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.LargeImage")));
-            this.ribbonButton2.Name = "ribbonButton2";
-            this.ribbonButton2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton2.SmallImage")));
-            this.ribbonButton2.Text = "2";
-            this.ribbonButton2.Click += new System.EventHandler(this.ribbonButton2_Click);
+            this.btn1.Image = ((System.Drawing.Image)(resources.GetObject("btn1.Image")));
+            this.btn1.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn1.LargeImage")));
+            this.btn1.Name = "btn1";
+            this.btn1.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn1.SmallImage")));
+            this.btn1.Text = "1";
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
-            // ribbonButton3
+            // btn2
             // 
-            this.ribbonButton3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.Image")));
-            this.ribbonButton3.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.LargeImage")));
-            this.ribbonButton3.Name = "ribbonButton3";
-            this.ribbonButton3.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.SmallImage")));
-            this.ribbonButton3.Text = "3";
-            this.ribbonButton3.Click += new System.EventHandler(this.ribbonButton3_Click);
+            this.btn2.Image = ((System.Drawing.Image)(resources.GetObject("btn2.Image")));
+            this.btn2.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn2.LargeImage")));
+            this.btn2.Name = "btn2";
+            this.btn2.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn2.SmallImage")));
+            this.btn2.Text = "2";
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
-            // ribbonButton4
+            // btn3
             // 
-            this.ribbonButton4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.Image")));
-            this.ribbonButton4.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.LargeImage")));
-            this.ribbonButton4.Name = "ribbonButton4";
-            this.ribbonButton4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.SmallImage")));
-            this.ribbonButton4.Text = "4";
-            this.ribbonButton4.Click += new System.EventHandler(this.ribbonButton4_Click);
+            this.btn3.Image = ((System.Drawing.Image)(resources.GetObject("btn3.Image")));
+            this.btn3.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn3.LargeImage")));
+            this.btn3.Name = "btn3";
+            this.btn3.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn3.SmallImage")));
+            this.btn3.Text = "3";
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
-            // ribbonButton5
+            // btn4
             // 
-            this.ribbonButton5.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.Image")));
-            this.ribbonButton5.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.LargeImage")));
-            this.ribbonButton5.Name = "ribbonButton5";
-            this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
-            this.ribbonButton5.Text = "5";
-            this.ribbonButton5.Click += new System.EventHandler(this.ribbonButton5_Click);
+            this.btn4.Image = ((System.Drawing.Image)(resources.GetObject("btn4.Image")));
+            this.btn4.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn4.LargeImage")));
+            this.btn4.Name = "btn4";
+            this.btn4.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn4.SmallImage")));
+            this.btn4.Text = "4";
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
-            // ribbonButton6
+            // btn5
             // 
-            this.ribbonButton6.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.Image")));
-            this.ribbonButton6.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.LargeImage")));
-            this.ribbonButton6.Name = "ribbonButton6";
-            this.ribbonButton6.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.SmallImage")));
-            this.ribbonButton6.Text = "6";
-            this.ribbonButton6.Click += new System.EventHandler(this.ribbonButton6_Click);
+            this.btn5.Image = ((System.Drawing.Image)(resources.GetObject("btn5.Image")));
+            this.btn5.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn5.LargeImage")));
+            this.btn5.Name = "btn5";
+            this.btn5.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn5.SmallImage")));
+            this.btn5.Text = "5";
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
-            // ribbonButton7
+            // btn6
             // 
-            this.ribbonButton7.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.Image")));
-            this.ribbonButton7.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.LargeImage")));
-            this.ribbonButton7.Name = "ribbonButton7";
-            this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
-            this.ribbonButton7.Text = "7";
-            this.ribbonButton7.Click += new System.EventHandler(this.ribbonButton7_Click);
+            this.btn6.Image = ((System.Drawing.Image)(resources.GetObject("btn6.Image")));
+            this.btn6.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn6.LargeImage")));
+            this.btn6.Name = "btn6";
+            this.btn6.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn6.SmallImage")));
+            this.btn6.Text = "6";
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
-            // ribbonButton8
+            // btn7
             // 
-            this.ribbonButton8.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.Image")));
-            this.ribbonButton8.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.LargeImage")));
-            this.ribbonButton8.Name = "ribbonButton8";
-            this.ribbonButton8.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton8.SmallImage")));
-            this.ribbonButton8.Text = "8";
-            this.ribbonButton8.Click += new System.EventHandler(this.ribbonButton8_Click);
+            this.btn7.Image = ((System.Drawing.Image)(resources.GetObject("btn7.Image")));
+            this.btn7.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn7.LargeImage")));
+            this.btn7.Name = "btn7";
+            this.btn7.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn7.SmallImage")));
+            this.btn7.Text = "7";
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
-            // ribbonButton9
+            // btn8
             // 
-            this.ribbonButton9.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.Image")));
-            this.ribbonButton9.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.LargeImage")));
-            this.ribbonButton9.Name = "ribbonButton9";
-            this.ribbonButton9.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton9.SmallImage")));
-            this.ribbonButton9.Text = "9";
-            this.ribbonButton9.Click += new System.EventHandler(this.ribbonButton9_Click);
+            this.btn8.Image = ((System.Drawing.Image)(resources.GetObject("btn8.Image")));
+            this.btn8.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn8.LargeImage")));
+            this.btn8.Name = "btn8";
+            this.btn8.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn8.SmallImage")));
+            this.btn8.Text = "8";
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
-            // btnZero
+            // btn9
             // 
-            this.btnZero.Image = ((System.Drawing.Image)(resources.GetObject("btnZero.Image")));
-            this.btnZero.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnZero.LargeImage")));
-            this.btnZero.Name = "btnZero";
-            this.btnZero.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnZero.SmallImage")));
-            this.btnZero.Text = "0";
-            this.btnZero.Click += new System.EventHandler(this.btnZero_Click);
+            this.btn9.Image = ((System.Drawing.Image)(resources.GetObject("btn9.Image")));
+            this.btn9.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn9.LargeImage")));
+            this.btn9.Name = "btn9";
+            this.btn9.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn9.SmallImage")));
+            this.btn9.Text = "9";
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
+            // 
+            // btn0
+            // 
+            this.btn0.Image = ((System.Drawing.Image)(resources.GetObject("btn0.Image")));
+            this.btn0.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn0.LargeImage")));
+            this.btn0.Name = "btn0";
+            this.btn0.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn0.SmallImage")));
+            this.btn0.Text = "0";
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // ribbonPanelMathOperations
             // 
@@ -307,6 +322,15 @@ namespace RibbonCalculator2007
             this.textBox1.Size = new System.Drawing.Size(719, 283);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "0";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmMain
             // 
@@ -328,16 +352,6 @@ namespace RibbonCalculator2007
         private System.Windows.Forms.Ribbon ribbon;
         private System.Windows.Forms.RibbonTab ribbonTab1;
         private System.Windows.Forms.RibbonPanel ribbonPanelNumbers;
-        private System.Windows.Forms.RibbonButton ribbonButton1;
-        private System.Windows.Forms.RibbonButton ribbonButton2;
-        private System.Windows.Forms.RibbonButton ribbonButton3;
-        private System.Windows.Forms.RibbonButton ribbonButton4;
-        private System.Windows.Forms.RibbonButton ribbonButton5;
-        private System.Windows.Forms.RibbonButton ribbonButton6;
-        private System.Windows.Forms.RibbonButton ribbonButton7;
-        private System.Windows.Forms.RibbonButton ribbonButton8;
-        private System.Windows.Forms.RibbonButton ribbonButton9;
-        private System.Windows.Forms.RibbonButton btnZero;
         private System.Windows.Forms.RibbonPanel ribbonPanelMathOperations;
         private System.Windows.Forms.RibbonButton btnAdd;
         private System.Windows.Forms.RibbonButton btnSubtract;
@@ -350,6 +364,18 @@ namespace RibbonCalculator2007
         private System.Windows.Forms.RichTextBox textBox1;
         private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbExit;
         private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbSettings;
+        private System.Windows.Forms.RibbonButtonList ribbonButtonList2;
+        private System.Windows.Forms.RibbonButton btn1;
+        private System.Windows.Forms.RibbonButton btn2;
+        private System.Windows.Forms.RibbonButton btn3;
+        private System.Windows.Forms.RibbonButton btn4;
+        private System.Windows.Forms.RibbonButton btn5;
+        private System.Windows.Forms.RibbonButton btn6;
+        private System.Windows.Forms.RibbonButton btn7;
+        private System.Windows.Forms.RibbonButton btn8;
+        private System.Windows.Forms.RibbonButton btn9;
+        private System.Windows.Forms.RibbonButton btn0;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

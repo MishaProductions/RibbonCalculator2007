@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace RibbonCalculator2007
@@ -25,51 +26,52 @@ namespace RibbonCalculator2007
             }
         }
         #region Number buttons
-        private void ribbonButton1_Click(object sender, EventArgs e)
+        private void btn1_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("1");
         }
-        private void ribbonButton2_Click(object sender, EventArgs e)
+
+        private void btn2_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("2");
         }
 
-        private void ribbonButton3_Click(object sender, EventArgs e)
+        private void btn3_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("3");
         }
 
-        private void ribbonButton4_Click(object sender, EventArgs e)
+        private void btn4_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("4");
         }
 
-        private void ribbonButton5_Click(object sender, EventArgs e)
+        private void btn5_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("5");
         }
 
-        private void ribbonButton6_Click(object sender, EventArgs e)
+        private void btn6_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("6");
         }
 
-        private void ribbonButton7_Click(object sender, EventArgs e)
+        private void btn7_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("7");
         }
 
-        private void ribbonButton8_Click(object sender, EventArgs e)
+        private void btn8_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("8");
         }
 
-        private void ribbonButton9_Click(object sender, EventArgs e)
+        private void btn9_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("9");
         }
 
-        private void btnZero_Click(object sender, EventArgs e)
+        private void btn0_Click(object sender, EventArgs e)
         {
             AddNumberToTextBox("0");
         }
@@ -145,7 +147,7 @@ namespace RibbonCalculator2007
                     HandleError("Cannot divide by zero.");
                     Clear();
                     return;
-                }    
+                }
                 var result = num1 / num2;
                 Input = "";
                 Operand1 = result.ToString(); //This is so adding the result with another number would work
@@ -212,7 +214,7 @@ namespace RibbonCalculator2007
         }
         private void HandleError(string error)
         {
-            MessageBox.Show(error,"Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(error, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         private void Clear()
         {
@@ -240,5 +242,102 @@ namespace RibbonCalculator2007
             new frmSettings().ShowDialog();
         }
         #endregion
+        Keys prevKey;
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Handled)
+                return;
+            if (e.KeyCode == Keys.Oemplus && prevKey == Keys.ShiftKey)
+            {
+                SetOperation("+");
+            }
+            else if (e.KeyCode == Keys.OemMinus && prevKey != Keys.ShiftKey)
+            {
+                SetOperation("-");
+            }
+            else if (e.KeyCode == Keys.OemQuestion && prevKey == Keys.ShiftKey)
+            {
+                SetOperation("➗");
+            }
+            else if (e.KeyCode == Keys.D8 && prevKey == Keys.ShiftKey)
+            {
+                SetOperation("×");
+            }
+            else if (e.KeyCode == Keys.D1)
+            {
+                AddNumberToTextBox("1");
+            }
+            else if (e.KeyCode == Keys.D2)
+            {
+                AddNumberToTextBox("2");
+            }
+            else if (e.KeyCode == Keys.D3)
+            {
+                AddNumberToTextBox("3");
+            }
+            else if (e.KeyCode == Keys.D4)
+            {
+                AddNumberToTextBox("4");
+            }
+            else if (e.KeyCode == Keys.D5)
+            {
+                AddNumberToTextBox("5");
+            }
+            else if (e.KeyCode == Keys.D6)
+            {
+                AddNumberToTextBox("6");
+            }
+            else if (e.KeyCode == Keys.D7)
+            {
+                AddNumberToTextBox("7");
+            }
+            else if (e.KeyCode == Keys.D8)
+            {
+                AddNumberToTextBox("8");
+            }
+            else if (e.KeyCode == Keys.D9)
+            {
+                AddNumberToTextBox("9");
+            }
+            else if (e.KeyCode == Keys.D0)
+            {
+                AddNumberToTextBox("0");
+            }
+            else if (e.KeyCode == Keys.Oemplus && prevKey != Keys.ShiftKey)
+            {
+                btnFindout_Click(null, null);
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                btnFindout_Click(null, null);
+            }
+            else if (e.KeyCode == Keys.OemBackslash)
+            {
+                //not yet supported
+            }
+            else
+            {
+                Debug.WriteLine(e.KeyCode + "prev key: " + prevKey);
+            }
+
+            prevKey = e.KeyCode;
+            e.Handled = true;
+            e.SuppressKeyPress = true;
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            textBox1.SelectionStart = textBox1.Text.Length;
+            textBox1.SelectionLength = 0;
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
